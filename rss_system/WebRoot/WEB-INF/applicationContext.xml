@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/rss_system">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+		<property name="maxActive" value="100"></property>
+		<property name="maxIdle" value="30"></property>
+		<property name="maxWait" value="500"></property>
+		<property name="defaultAutoCommit" value="true"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				
+				<value>net/wukong/rssnews/RssNews.hbm.xml</value>
+				<value>net/wukong/rssnews/User.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+    <bean id="rssNewsDao" class="net.wukong.dao.impl.RssNewsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="rssNewsService"
+		class="net.wukong.service.impl.RssNewsServiceImpl">
+		<property name="rssNewsDao" ref="rssNewsDao"></property>		
+	</bean>
+	
+	<bean id="ListNewsAction"
+		class="net.wukong.rssnews.action.ListRssNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadSzywAction"
+		class="net.wukong.rssnews.action.LoadSzywNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadTWAction"
+		class="net.wukong.rssnews.action.LoadTWNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadGangAoAction"
+		class="net.wukong.rssnews.action.LoadGangaoNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadHqsyAction"
+		class="net.wukong.rssnews.action.LoadHqsyNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGjrwAction"
+		class="net.wukong.rssnews.action.LoadGjrwNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadZgjqAction"
+		class="net.wukong.rssnews.action.LoadZgjqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadThjjAction"
+		class="net.wukong.rssnews.action.LoadThjjNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGjjqAction"
+		class="net.wukong.rssnews.action.LoadGjjqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGuPiaoAction"
+		class="net.wukong.rssnews.action.LoadGuPiaoNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadLiCaiAction"
+		class="net.wukong.rssnews.action.LoadLiCaiNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJjmsAction"
+		class="net.wukong.rssnews.action.LoadJjmsNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadRwdtAction"
+		class="net.wukong.rssnews.action.LoadRwdtNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGsdtAction"
+		class="net.wukong.rssnews.action.LoadGsdtNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadSsyqAction"
+		class="net.wukong.rssnews.action.LoadSsyqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDzswAction"
+		class="net.wukong.rssnews.action.LoadDzswNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadWlyxAction"
+		class="net.wukong.rssnews.action.LoadWlyxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadHlwplAction"
+		class="net.wukong.rssnews.action.LoadHlwplNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGddtAction"
+		class="net.wukong.rssnews.action.LoadGddtNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadZcfxAction"
+		class="net.wukong.rssnews.action.LoadZcfxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadSczsAction"
+		class="net.wukong.rssnews.action.LoadSczsNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJiaJuAction"
+		class="net.wukong.rssnews.action.LoadJiaJuNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadFcplAction"
+		class="net.wukong.rssnews.action.LoadFcplNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadFczxAction"
+		class="net.wukong.rssnews.action.LoadFczxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadFcjdAction"
+		class="net.wukong.rssnews.action.LoadFcjdNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadXinCheAction"
+		class="net.wukong.rssnews.action.LoadXinCheNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDaoGouAction"
+		class="net.wukong.rssnews.action.LoadDaoGouNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGdhqAction"
+		class="net.wukong.rssnews.action.LoadGdhqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadNBAAction"
+		class="net.wukong.rssnews.action.LoadNBANewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGjzqAction"
+		class="net.wukong.rssnews.action.LoadGjzqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadGnzqAction"
+		class="net.wukong.rssnews.action.LoadGnzqNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadCBAAction"
+		class="net.wukong.rssnews.action.LoadCBANewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadZhtyAction"
+		class="net.wukong.rssnews.action.LoadZhtyNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadAoYunAction"
+		class="net.wukong.rssnews.action.LoadAoYunNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadMingXAction"
+		class="net.wukong.rssnews.action.LoadMingXNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDianYAction"
+		class="net.wukong.rssnews.action.LoadDianYNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDianshAction"
+		class="net.wukong.rssnews.action.LoadDianshNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadZongYiAction"
+		class="net.wukong.rssnews.action.LoadZongYiNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadYanChuAction"
+		class="net.wukong.rssnews.action.LoadYanChuNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJiangXAction"
+		class="net.wukong.rssnews.action.LoadJiangXNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadWangYAction"
+		class="net.wukong.rssnews.action.LoadWangYNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadTvGamesAction"
+		class="net.wukong.rssnews.action.LoadTvGamesNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDzjjAction"
+		class="net.wukong.rssnews.action.LoadDzjjNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadHotYxAction"
+		class="net.wukong.rssnews.action.LoadHotYxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadMssjAction"
+		class="net.wukong.rssnews.action.LoadMssjNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKaoShiAction"
+		class="net.wukong.rssnews.action.LoadKaoShiNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadLiuXueAction"
+		class="net.wukong.rssnews.action.LoadLiuXueNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJiuYeAction"
+		class="net.wukong.rssnews.action.LoadJiuYeNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadClfsAction"
+		class="net.wukong.rssnews.action.LoadClfsNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadMrhfAction"
+		class="net.wukong.rssnews.action.LoadMrhfNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJfjsAction"
+		class="net.wukong.rssnews.action.LoadJfjsNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadQglxAction"
+		class="net.wukong.rssnews.action.LoadQglxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJkysAction"
+		class="net.wukong.rssnews.action.LoadJkysNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadShouJiAction"
+		class="net.wukong.rssnews.action.LoadShouJiNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadShuMaAction"
+		class="net.wukong.rssnews.action.LoadShuMaNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadDianNaoAction"
+		class="net.wukong.rssnews.action.LoadDianNaoNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKePuAction"
+		class="net.wukong.rssnews.action.LoadKePuNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadYeJieAction"
+		class="net.wukong.rssnews.action.LoadYeJieNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadJiaDianAction"
+		class="net.wukong.rssnews.action.LoadJiaDianNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKptpAction"
+		class="net.wukong.rssnews.action.LoadKptpNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKxspAction"
+		class="net.wukong.rssnews.action.LoadKxspNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKjjdAction"
+		class="net.wukong.rssnews.action.LoadKjjdNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadShyfAction"
+		class="net.wukong.rssnews.action.LoadShyfNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadShwxAction"
+		class="net.wukong.rssnews.action.LoadShwxNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="LoadZqskAction"
+		class="net.wukong.rssnews.action.LoadZqskNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadQwysAction"
+		class="net.wukong.rssnews.action.LoadQwysNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadWxyhAction"
+		class="net.wukong.rssnews.action.LoadWxyhNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadMusicAction"
+		class="net.wukong.rssnews.action.LoadMusicNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	
+	<bean id="LoadKjqtAction"
+		class="net.wukong.rssnews.action.LoadKjqtNewsAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="FindNewsTitleAction"
+		class="net.wukong.rssnews.action.FindNewsByTitleAction" scope="prototype">
+		<property name="service" ref="rssNewsService"></property>
+	</bean>
+	<bean id="userDao" class="net.wukong.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="net.wukong.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>		
+	</bean>
+	<bean id="LoginUserAction"
+		class="net.wukong.user.action.UserLoginAction" scope="prototype">
+		<property name="service" ref="userService"></property>
+	</bean>
+	<bean id="StartRolesAction"
+		class="net.wukong.rssnews.action.StartRoleAction" scope="prototype">
+		
+	</bean>	
+	<!--    
+   <bean id="executor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"> 
+         <property name="corePoolSize" value="10" /> 
+         <property name="maxPoolSize" value="100" /> 
+         <property name="queueCapacity" value="500" />
+   </bean>
+	<bean id="bizObject" class="net.wukong.util.ExpireJobTask" />
+	<bean id="jobDetail" class="quartz.MethodInvokingJobDetailFactoryBean"> 
+	      <property name="targetObject" ref="bizObject" /> 
+	      <property name="targetMethod" value="doBiz" />
+	</bean>
+	<bean id="cronTrigger" class="quartz.CronTriggerBean">
+	      <property name="jobDetail" ref="jobDetail" />
+	      <property name="cronExpression" value="10 0/1 * * * ?" />
+	</bean>
+	<bean id="taskTrigger" class="quartz.SimpleTriggerBean"> 
+	      <property name="jobDetail" ref="jobDetail" /> 
+	      <property name="startDelay" value="10000" /> 
+	      <property name="repeatInterval" value="60000" />
+	</bean>
+	
+    <bean class="quartz.SchedulerFactoryBean">
+           <property name="triggers">
+                <list>
+                     <ref bean="cronTrigger" />
+               </list>
+           </property>
+           <property name="taskExecutor" ref="executor" />
+   </bean>
+	-->	
+</beans>

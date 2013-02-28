@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="user" extends="struts-default">      
+		<action name="verifyUser" class="LoginUserAction">
+			<result name="success">/listNews.jsp</result>		
+		    <result name="input">/login.jsp</result>
+		</action>
+    </package>
+	<package name="rssNews" extends="struts-default">
+	
+	       <action name="listRssNews" class="ListNewsAction">
+			<result name="success">/listNews.jsp</result>
+		</action>
+		 <action name="loadSzywNews" class="LoadSzywAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadTwNews" class="LoadTWAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGangAoNews" class="LoadGangAoAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadhqsyNews" class="LoadHqsyAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGjrwNews" class="LoadGjrwAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadZgjqNews" class="LoadZgjqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadThjjNews" class="LoadThjjAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGjjqNews" class="LoadGjjqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGuPiaoNews" class="LoadGuPiaoAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadLiCaiNews" class="LoadLiCaiAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJjmsNews" class="LoadJjmsAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadRwdtNews" class="LoadRwdtAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGsdtNews" class="LoadGsdtAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadSsyqNews" class="LoadSsyqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDzswNews" class="LoadDzswAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadWlyxNews" class="LoadWlyxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadHlwplNews" class="LoadHlwplAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGddtNews" class="LoadGddtAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadZcfxNews" class="LoadZcfxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadSczsNews" class="LoadSczsAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJiaJuNews" class="LoadJiaJuAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadFcplNews" class="LoadFcplAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadFczxNews" class="LoadFczxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadFcjdNews" class="LoadFcjdAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadXinCheNews" class="LoadXinCheAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDaoGouNews" class="LoadDaoGouAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGdhqNews" class="LoadGdhqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadWxyhNews" class="LoadWxyhAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadNBANews" class="LoadNBAAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGjzqNews" class="LoadGjzqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadGnzqNews" class="LoadGnzqAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadCBANews" class="LoadCBAAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadZhtyNews" class="LoadZhtyAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadAoYunNews" class="LoadAoYunAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadMingXNews" class="LoadMingXAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDianYNews" class="LoadDianYAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDianshNews" class="LoadDianshAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadMusicNews" class="LoadMusicAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadZongYiNews" class="LoadZongYiAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadYanChuNews" class="LoadYanChuAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJiangXNews" class="LoadJiangXAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadWangYNews" class="LoadWangYAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadTvGamesNews" class="LoadTvGamesAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDzjjNews" class="LoadDzjjAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadHotYxNews" class="LoadHotYxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		<action name="loadMssjNews" class="LoadMssjAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKaoShiNews" class="LoadKaoShiAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadLiuXueNews" class="LoadLiuXueAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJiuYeNews" class="LoadJiuYeAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadClfsNews" class="LoadClfsAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadMrhfNews" class="LoadMrhfAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJfjsNews" class="LoadJfjsAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadQglxNews" class="LoadQglxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJkysNews" class="LoadJkysAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadShouJiNews" class="LoadShouJiAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadShuMaNews" class="LoadShuMaAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadDianNaoNews" class="LoadDianNaoAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKePuNews" class="LoadKePuAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKjqtNews" class="LoadKjqtAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadYeJieNews" class="LoadYeJieAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadJiaDianNews" class="LoadJiaDianAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKptpNews" class="LoadKptpAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKxspNews" class="LoadKxspAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadKjjdNews" class="LoadKjjdAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadShyfNews" class="LoadShyfAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadShwxNews" class="LoadShwxAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadZqskNews" class="LoadZqskAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		
+		<action name="loadQwysNews" class="LoadQwysAction">
+			<result name="success" type="redirect">
+				listRssNews.action
+			</result>
+		</action>
+		<action name="findNewsByTitle" class="FindNewsTitleAction">
+			<result name="success">/listPageNews.jsp</result>
+		</action>
+		<action name="startRole" class="StartRolesAction">
+			<result name="success">/listNews.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
